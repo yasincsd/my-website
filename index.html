@@ -20,6 +20,7 @@
             color: var(--dark-text);
             background-color: #fff;
             line-height: 1.6;
+            padding-top: 80px; /* فاصله برای جبران هدر ثابت */
         }
         
         .primary-bg {
@@ -167,6 +168,17 @@
                 width: 18px;
                 height: 18px;
             }
+        }
+
+        /* Fixed Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -566,7 +578,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 80, // جبران هدر ثابت
                         behavior: 'smooth'
                     });
                     
